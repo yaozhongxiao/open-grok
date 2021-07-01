@@ -38,7 +38,7 @@ fi
 mkdir -p ${indexing_root}
 
 # 2. export the OpenGrok environment variables
-export OPENGROK_TOMCAT_BASE=/data/open_source/apache-tomcat-9.0.10
+export OPENGROK_TOMCAT_BASE=${SCRIPT_DIR}/../../apache-tomcat-9.0.10
 export OPENGROK_WEBAPP_CONTEXT=$opengrok_webappname
 
 # export OPENGROK_INSTANCE_BASE=$indexing_root

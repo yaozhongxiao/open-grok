@@ -6,14 +6,15 @@
 #***************************************************************#
 exec="" # echo | ""
 
-echo "$0 webapp (webapp default is 'mychain')"
+echo "$0 webapp (webapp default is 'myapp')"
 
 opengrok_webappname="mychain"
 if [ ! -z $1 ];then
     opengrok_webappname=$1
 fi
 
-OPEN_SOURE_DIR=/home/zhongxiao.yzx/workspace/open_source
+SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
+OPEN_SOURE_DIR=${SCRIPT_DIR}/../../
 OPENGROK_TOMCAT_BASE=${OPEN_SOURE_DIR}/apache-tomcat-9.0.10
 OPENGROK_BASE=${OPEN_SOURE_DIR}/opengrok-0.13-rc10
 OPENGROK_WEBAPP=mychain.war
@@ -27,3 +28,4 @@ fi
 
 echo "cp -r $OPENGROK_BASE/lib/$OPENGROK_WEBAPP $OPENGROK_TOMCAT_BASE/webapps/${opengrok_webappname}.war"
 $exec cp -r $OPENGROK_BASE/lib/$OPENGROK_WEBAPP $OPENGROK_TOMCAT_BASE/webapps/${opengrok_webappname}.war
+echo ""
